@@ -1,17 +1,24 @@
 var cards=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16];
-
 var cardsStatus=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
 var cardsActive=[];
-
 var pairsFind=0;
-
 var cardsImg=document.getElementById("main").getElementsByTagName("img");
+var originalTime;
+var endTime;
+var finalTime;
+var seconds;
+var score = 0;
+
 
 document.getElementById("launchGame").onclick = function () {
     document.getElementById("beginScreen").style.cssText = "display: none";
     document.getElementById("main").style.cssText = "display: block";
+    originalTime = Date.now();
     begin();
+};
+
+document.getElementById("endGame").onclick = function () {
+    location.reload();
 };
 
 
@@ -37,8 +44,13 @@ function display(nbCard){
 }
 
 function gameEnd(){
-    alert("Félicitations");
-    location.reload();
+    endTime = Date.now();
+    finalTime = endTime - originalTime;
+    seconds = finalTime / 1000;
+    document.getElementById("main").style.cssText = "display: none";
+    document.getElementById("endScreen").style.cssText = "display: block";
+    document.getElementById("time").innerHTML += " " + parseInt(seconds) + " secondes.";
+    document.getElementById("points").innerHTML += " "+ parseInt(score) + " points."
 }
 
 function begin(){
@@ -62,6 +74,7 @@ function game(nbCard){
             if(cards[cardsActive[0]] === cards[cardsActive[1]]){
                 newState=-1;
                 pairsFind++;
+                score = score +3;
             }
             cardsStatus[cardsActive[0]]=newState;
             cardsStatus[cardsActive[1]]=newState;
@@ -69,6 +82,7 @@ function game(nbCard){
                 display(cardsActive[0]);
                 display(cardsActive[1]);
                 cardsActive=[];
+                score --;
                 if(pairsFind === 16){
                     gameEnd();
                 }
