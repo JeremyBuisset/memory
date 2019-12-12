@@ -31,7 +31,9 @@ img{
         height: 70px;
         margin: 0 0 0 0;
     }
-    #row1{
-        padding: 0 0 0 0;
+    #row1,#row2,#row3,#row4{
+        width: 350px;
     }
+
+
 }
