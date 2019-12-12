@@ -8,7 +8,12 @@ var pairsFind=0;
 
 var cardsImg=document.getElementById("main").getElementsByTagName("img");
 
-begin();
+document.getElementById("launchGame").onclick = function () {
+    document.getElementById("beginScreen").style.cssText = "display: none";
+    document.getElementById("main").style.cssText = "display: block";
+    begin();
+};
+
 
 for(var i=0;i<cardsImg.length;i++){
     cardsImg[i].nbCard=i;
@@ -71,3 +76,4 @@ function game(nbCard){
         }
     }
 }
+
