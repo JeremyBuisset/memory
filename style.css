@@ -33,6 +33,7 @@ img{
     }
     #row1,#row2,#row3,#row4{
         width: 350px;
+        margin-left: 50%;
     }
 
 
