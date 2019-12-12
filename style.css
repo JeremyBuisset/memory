@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+    margin: 0;
+    background-color: #C2D2F2;
+}
+
+header{
+    padding: 20px 0 20px 0;
+    background-color: #395274;
+    color: honeydew;
+    border-bottom: 2px solid #212121;
+}
+
+h3, h1{
+    margin: 0;
+    text-shadow: 2px 2px 2px #212121;
+}
+
+#main{
+   margin: 20px 0 0 0;
+}
+
+img{
+    margin: 0 20px 20px 20px;
+    border: #212121 solid 2px;
+}
