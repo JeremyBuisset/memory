@@ -38,6 +38,7 @@ img{
 
 #endScreen{
     display: none;
+    animation: animate 1s ;
 }
 
 .btn {
